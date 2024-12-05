@@ -19,15 +19,15 @@ const XDictionary = () => {
     );
     if (searchResult) {
       setResult(searchResult.meaning);
-      setSearchTerm("");
+       
     } else {
       setResult("Word not found in the dictionary.");
-      setSearchTerm("");
+       
     }
   };
 
   return (
-    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif" }}>
+    <div style={{ padding: "20px", fontFamily: "Arial, sans-serif", textAlign:"left"}}>
       <h1>Dictionary App</h1>
       <div style={{ marginBottom: "10px" }}>
         <input
@@ -58,11 +58,9 @@ const XDictionary = () => {
         >
           Search
         </button>
-         
+        <h1 style={{fontSize:"16px", fontFamily: "Arial, sans-serif"}}>Definition:</h1>
       </div>
-      {result && (
-        <>
-        <h1>Definition:</h1>
+      {result && (        
         <div
           style={{
             marginTop: "20px",
@@ -72,7 +70,7 @@ const XDictionary = () => {
         >
           {result}
         </div>
-        </>
+        
       )}
     </div>
   );
