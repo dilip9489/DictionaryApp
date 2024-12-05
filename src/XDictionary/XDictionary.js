@@ -60,8 +60,10 @@ const XDictionary = () => {
         </button>
         <h1 style={{fontSize:"16px", fontFamily: "Arial, sans-serif"}}>Definition:</h1>
       </div>
-      {result && (        
-        <div
+      {result && (   
+        <>
+         <h1 style={{fontSize:"16px", fontFamily: "Arial, sans-serif"}}>Definition:</h1>
+         <div
           style={{
             marginTop: "20px",
             fontSize: "18px",
@@ -70,6 +72,8 @@ const XDictionary = () => {
         >
           {result}
         </div>
+        
+        </>     
         
       )}
     </div>
