@@ -58,7 +58,7 @@ const XDictionary = () => {
         >
           Search
         </button>
-        <h1 style={{fontSize:"16px", fontFamily: "Arial, sans-serif"}}>Definition:</h1>
+        {/* <h1 style={{fontSize:"16px", fontFamily: "Arial, sans-serif"}}>Definition:</h1> */}
       </div>
       {result && (   
         <>
