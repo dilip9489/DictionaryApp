@@ -14,17 +14,15 @@ const XDictionary = () => {
 
    
   const handleSearch = () => {
-    const searchResult = dictionary.find(
-      (entry) => entry.word.toLowerCase() === searchTerm.toLowerCase()
-    );
-    if (searchResult) {
-      setResult(searchResult.meaning);
-       
-    } else {
-      setResult("Word not found in the dictionary.");
-       
-    }
-  };
+    if (!searchTerm.trim()) {
+        setResult("Word not found in the dictionary.");
+        return;
+      }
+      const searchResult = dictionary.find(
+        (entry) => entry.word.toLowerCase() === searchTerm.toLowerCase()
+      );
+      setResult(searchResult ? searchResult.meaning : "Word not found in the dictionary.");
+    };
 
   return (
     <div style={{ padding: "20px", fontFamily: "Arial, sans-serif", textAlign:"left"}}>
@@ -63,7 +61,7 @@ const XDictionary = () => {
       {result && (   
         <>
          <h1 style={{fontSize:"16px", fontFamily: "Arial, sans-serif"}}>Definition:</h1>
-         <div
+         <p
           style={{
             marginTop: "20px",
             fontSize: "18px",
@@ -71,7 +69,7 @@ const XDictionary = () => {
           }}
         >
           {result}
-        </div>
+        </p>
         
         </>     
         
